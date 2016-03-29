@@ -1,10 +1,38 @@
 #!/bin/bash -e
 
+echo "=> Setup Supervisord"
+
+# supervisor config file
+# Adapted from the config file distributed with the supervisor package on Debian
+# Jessie
+
+# Enable supervisord in non-daemon mode and set sensible values for log file and
+# pid file (otherwise supervisord will choose its own defaults)
+[supervisord]
+nodaemon=true
+logfile = /var/log/supervisor/supervisord.log
+pidfile = /var/run/supervisord.pid
+childlogdir = /var/log/supervisor
+
+
+# Enable supervisorctl via RPC interface over Unix socket
+[unix_http_server]
+file = /var/run/supervisor.sock
+chmod = 0700
+
+[rpcinterface:supervisor]
+supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+
+[supervisorctl]
+serverurl = unix:///var/run/supervisor.sock
+
+
+# Include conf files for child processes
+[include]
+files = /etc/supervisor/conf.d/*.conf
+
 echo "=> Starting nginx"
 nginx; service nginx reload
-
-echo "=> Starting Supervisord"
-supervisord -c /etc/supervisord.conf
 
 echo "=> Tailing logs"
 tail -qF /var/log/supervisor/*.log
