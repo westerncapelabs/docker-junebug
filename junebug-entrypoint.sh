@@ -1,5 +1,14 @@
 #!/bin/bash -e
 
+echo "=> Starting nginx"
+nginx; service nginx reload
+
+echo "=> Starting Supervisord"
+supervisord -c /etc/supervisord.conf
+
+echo "=> Tailing logs"
+tail -qF /var/log/supervisor/*.log
+
 JUNEBUG_INTERFACE=${JUNEBUG_INTERFACE:-0.0.0.0}
 JUNEBUG_PORT=${JUNEBUG_PORT:-8080}
 REDIS_HOST=${REDIS_HOST:-127.0.0.1}
