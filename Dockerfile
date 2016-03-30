@@ -1,8 +1,8 @@
 FROM praekeltfoundation/supervisor
 MAINTAINER Praekelt Foundation <dev@praekeltfoundation.org>
 
-RUN apt-get-install.sh gcc python-pip python-dev libjpeg-dev zlib1g-dev libssl-dev
-RUN pip install vxyowsup
+RUN apt-get-install.sh libjpeg62
+RUN apt-get-install.sh nginx
 RUN pip install -q junebug
 COPY ./docker/nginx.conf /etc/supervisor/conf.d/nginx.conf
 COPY ./docker/junebug.conf /etc/supervisor/conf.d/junebug.conf
