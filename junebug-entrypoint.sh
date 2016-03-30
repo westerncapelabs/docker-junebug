@@ -13,7 +13,7 @@ AMQP_PASSWORD=${AMQP_PASSWORD:-guest}
 
 echo "Starting Junebug with redis://$REDIS_HOST:$REDIS_PORT/$REDIS_DB and amqp://$AMQP_USER:$AMQP_PASSWORD@$AMQP_HOST:$AMQP_PORT/$AMQP_VHOST"
 
-jb \
+exec jb \
     --interface $JUNEBUG_INTERFACE \
     --port $JUNEBUG_PORT \
     --redis-host $REDIS_HOST \
