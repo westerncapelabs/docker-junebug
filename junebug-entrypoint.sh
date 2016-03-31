@@ -25,4 +25,5 @@ exec jb \
     --amqp-user $AMQP_USER \
     --amqp-password $AMQP_PASSWORD \
     --channels whatsapp:vxyowsup.whatsapp.WhatsAppTransport \
+    --channels vumigo:vumi.transports.vumi_bridge.GoConversationTransport \
     --logging-path .
