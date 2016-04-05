@@ -9,5 +9,6 @@ RUN pip install -q \
     junebug==0.1.1
 COPY ./docker/nginx.conf /etc/supervisor/conf.d/nginx.conf
 COPY ./docker/junebug.conf /etc/supervisor/conf.d/junebug.conf
+COPY ./docker/junebug.nginx /etc/nginx/includes/junebug/junebug.conf
 COPY ./junebug-entrypoint.sh /scripts/
-EXPOSE 8080
+EXPOSE 80
