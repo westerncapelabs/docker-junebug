@@ -6,8 +6,14 @@ RUN pip install -q \
     yowsup2==2.4.102 \
     vxyowsup==0.1.5 \
     vumi==0.6.3 \
-    junebug==0.1.1
+    junebug==0.1.3
+
 COPY ./docker/nginx.conf /etc/supervisor/conf.d/nginx.conf
 COPY ./docker/junebug.conf /etc/supervisor/conf.d/junebug.conf
 COPY ./junebug-entrypoint.sh /scripts/
-EXPOSE 8080
+
+RUN rm /etc/nginx/sites-enabled/default
+COPY ./docker/junebug/junebug.nginx /etc/nginx/includes/junebug/junebug.conf
+COPY ./docker/junebug/vhost.template /config/
+
+EXPOSE 80
