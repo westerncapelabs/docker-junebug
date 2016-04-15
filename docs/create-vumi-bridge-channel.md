@@ -60,6 +60,7 @@ Then configure the channel in Junebug:
   this to `null` if you don't have one).
 * Send an HTTP POST request to http://JUNEBUG_HOST/jb/channels/ with the
   following body:
+
   ```
   {
     "type": "vumigo",
