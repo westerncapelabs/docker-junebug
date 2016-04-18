@@ -10,4 +10,5 @@ Junebug and Nginx installed.
 
 ### Usage:
 
-TODO
+* [Set up Junebug in Mission Control](docs/set-up-junebug-in-mc.md)
+* [Create a Vumi Bridge channel](docs/create-vumi-bridge-channel.md)
