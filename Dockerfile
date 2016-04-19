@@ -5,8 +5,8 @@ RUN apt-get-install.sh libjpeg62 nginx
 RUN pip install -q \
     yowsup2==2.4.102 \
     vxyowsup==0.1.7 \
-    vumi==0.6.6 \
-    junebug==0.1.4
+    vumi==0.6.7 \
+    junebug==0.1.5
 
 COPY ./docker/nginx.conf /etc/supervisor/conf.d/nginx.conf
 COPY ./docker/junebug.conf /etc/supervisor/conf.d/junebug.conf
