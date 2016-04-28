@@ -16,5 +16,3 @@ COPY ./junebug-entrypoint.sh /scripts/
 RUN rm /etc/nginx/sites-enabled/default
 COPY ./docker/junebug/junebug.nginx /etc/nginx/includes/junebug/junebug.conf
 COPY ./docker/junebug/vhost.template /config/
-
-EXPOSE 443
