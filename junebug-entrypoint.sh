@@ -26,7 +26,7 @@ exec jb \
     --amqp-password $AMQP_PASSWORD \
     --channels whatsapp:vxyowsup.whatsapp.WhatsAppTransport \
     --channels facebook:vxmessenger.transport.MessengerTransport \
-    --channels vumi.transports.smpp.smppTransceiverTransport \
+    --channels smpp:vumi.transports.smpp.smppTransceiverTransport \
     --channels vumigo:vumi.transports.vumi_bridge.GoConversationTransport \
     --plugin '{"type": "junebug.plugins.nginx.NginxPlugin", "server_name": "_", "vhost_template": "/config/vhost.template"}' \
     --logging-path .
