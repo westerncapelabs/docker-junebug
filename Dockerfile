@@ -12,4 +12,4 @@ RUN pip install -q \
 COPY ./docker/junebug.conf /etc/supervisor/conf.d/junebug.conf
 COPY ./junebug-entrypoint.sh /scripts/
 
-EXPOSE 8080
+EXPOSE 443
