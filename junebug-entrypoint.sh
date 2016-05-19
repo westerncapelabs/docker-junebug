@@ -27,6 +27,6 @@ exec jb \
     --channels facebook:vxmessenger.transport.MessengerTransport \
     --channels smpp:vumi.transports.smpp.SmppTransceiverTransport \
     --channels vumigo:vumi.transports.vumi_bridge.GoConversationTransport \
-    --channels blastsms:vxblastsms.transport.BlastSMSUssdTransport \
+    --channels blastsms:vxblastsms.ussd.BlastSMSUssdTransport \
     --plugin '{"type": "junebug.plugins.nginx.NginxPlugin", "server_name": "_", "vhost_template": "/config/vhost.template"}' \
     --logging-path .
