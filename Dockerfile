@@ -2,7 +2,7 @@ FROM praekeltfoundation/supervisor
 MAINTAINER Praekelt Foundation <dev@praekeltfoundation.org>
 
 RUN apt-get-install.sh libjpeg62 nginx
-RUN pip install -q \
+RUN pip install \
     yowsup2==2.4.102 \
     vxyowsup==0.1.7 \
     vumi==0.6.7 \
