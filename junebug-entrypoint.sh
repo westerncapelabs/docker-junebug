@@ -24,7 +24,6 @@ exec jb \
     --amqp-port $AMQP_PORT \
     --amqp-user $AMQP_USER \
     --amqp-password $AMQP_PASSWORD \
-    --channels whatsapp:vxyowsup.whatsapp.WhatsAppTransport \
     --channels facebook:vxmessenger.transport.MessengerTransport \
     --channels smpp:vumi.transports.smpp.SmppTransceiverTransport \
     --channels vumigo:vumi.transports.vumi_bridge.GoConversationTransport \
